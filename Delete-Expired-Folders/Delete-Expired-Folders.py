@@ -6,7 +6,7 @@ import datetime
 directory_path = os.getenv("bshare_UploadLocation")
 
 # Set the hours/condition for folder deletion
-check_hours = 1
+check_hours = 48
 time_now = datetime.datetime.now()
 
 # os.walk to search directory tree
@@ -16,7 +16,7 @@ for root, dirs, files in os.walk(directory_path):
         # Check creation time of folders
         creation_time = datetime.datetime.fromtimestamp(os.path.getctime(item_path))
         # Check how many hours passed since creation
-        age = (time_now - creation_time).total_seconds() / 60  # 3600 for an hour
+        age = (time_now - creation_time).total_seconds() / 3600  # 3600 for an hour
 
         if age >= check_hours:
             try:
