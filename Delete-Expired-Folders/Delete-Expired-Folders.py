@@ -3,7 +3,7 @@ import shutil
 import datetime
 
 # Get directory path from environment variable
-directory_path = os.getenv("bshare_PyPath")
+directory_path = os.getenv("bshare_UploadLocation")
 
 # Set the hours/condition for folder deletion
 check_hours = 1
